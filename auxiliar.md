@@ -2,18 +2,42 @@
 
 
 ## manifest.json pode der
-background_color
-dir
-display
-icons
-identity
-lang
-name
-orientation
-prefer_related_applications
-related_applications
-scope
-short_name
-shortcuts
-start_url
-theme_color
+action (Manifest V3 and above)
+author (Manifest V2 and above)
+background (Manifest V2 and above)
+browser_action (Manifest V2)
+browser_specific_settings (Manifest V2 and above)
+chrome_settings_overrides (Manifest V2 and above)
+chrome_url_overrides (Manifest V2 and above)
+commands (Manifest V2 and above)
+content_scripts (Manifest V2 and above)
+content_security_policy (Manifest V2 and above)
+default_locale (Manifest V2 and above)
+description (Manifest V2 and above)
+developer (Manifest V2 and above)
+devtools_page (Manifest V2 and above)
+dictionaries (Manifest V2 and above)
+externally_connectable (Manifest V2 and above)
+homepage_url (Manifest V2 and above)
+host_permissions (Manifest V3 and above)
+icons (Manifest V2 and above)
+incognito (Manifest V2 and above)
+manifest_version (Manifest V2 and above)
+name (Manifest V2 and above)
+offline_enabled (Manifest V2 and above)
+omnibox (Manifest V2 and above)
+optional_permissions (Manifest V2 and above)
+options_page (Manifest V2 and above)
+options_ui (Manifest V2 and above)
+page_action (Manifest V2)
+permissions (Manifest V2 and above)
+protocol_handlers (Manifest V2 and above)
+short_name (Manifest V2 and above)
+sidebar_action (Manifest V2 and above)
+storage (Manifest V2 and above)
+theme (Manifest V2 and above)
+theme_experiment (Manifest V2 and above)
+user_scripts (Manifest V2)
+version (Manifest V2 and above)
+version_name (Manifest V2 and above)
+web_accessible_resources (Manifest V2 and above)
