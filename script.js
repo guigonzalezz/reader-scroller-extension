@@ -1,6 +1,6 @@
-let defaultPos = document.body.scrollHeight;
-let defaultTime = 1000000;
-defaultTime = window.scrollY * 30;
+// let defaultPos = document.body.scrollHeight;
+// let defaultTime = 1000000;
+// defaultTime = window.scrollY * 30;
 
 //1 Faster
 //2.5 Fast
@@ -13,7 +13,10 @@ defaultTime = window.scrollY * 30;
 let animationFrameId = [];
 let stopAnimation = false;
 
-function startScroll(pos, time) {
+function startScroll() {
+  var pos = document.body.scrollHeight;
+  var time = window.scrollY * 30;
+  console.log("startScroll ===============?>")
   stopAnimation = false;
   var currentPos = window.pageYOffset;
   var start = null;
@@ -36,6 +39,7 @@ function startScroll(pos, time) {
 }
 
 function stopScroll() {
+  console.log("stopScroll ===============?>")
   stopAnimation = true;
   animationFrameId.map(value => window.cancelAnimationFrame(value));
   animationFrameId = [];
@@ -44,7 +48,7 @@ function stopScroll() {
 document.addEventListener('keyup', e => {
   if (e.key == " " || e.code == "Space") {
     if(animationFrameId.length == 0) {
-      startScroll(defaultPos, defaultTime)
+      startScroll()
     }
     else {
       stopScroll()
@@ -52,8 +56,27 @@ document.addEventListener('keyup', e => {
   }
 })
 
-
-document.getElementById("myButton").addEventListener("click", startScroll(defaultPos, defaultTime));
+// EXECUTION VIA POPUP EXTESION
+document.getElementById("myButton").addEventListener("click", myFunction);
 function myFunction(){
-  console.log("CLIQUEI ====================")
+  if(animationFrameId.length == 0) {
+    chrome.tabs.executeScript({ code: `(${ startScroll })()` });
+  }
+  else {
+    chrome.tabs.executeScript({ code: `(${ stopScroll })()` });
+  }
+  
 }
+
+
+//Exemplo com retorno do executeScript
+// function inContent2(params) {
+//   const el = document.createElement('div');
+//   el.style.cssText = 'position:fixed; top:0; left:0; right:0; background:red';
+//   el.textContent = params.foo;
+//   document.body.appendChild(el);
+//   return {
+//     success: true,
+//     html: document.body.innerHTML,
+//   };
+// }
