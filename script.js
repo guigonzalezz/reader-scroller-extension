@@ -19,3 +19,8 @@ document.getElementById("donateLink").addEventListener("click", function() {
   window.open(document.getElementById("donateLink").getAttribute("href"), '_blank').focus();
 })
 
+
+document.getElementById("rangeInput").oninput = function() {
+  var value = (this.value-this.min)/(this.max-this.min)*100
+  this.style.background = 'linear-gradient(to right, #ff9f1c 0%, #ff9f1c ' + value + '%, #1a181b ' + value + '%, #1a181b 100%)'
+};
