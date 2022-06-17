@@ -9,3 +9,7 @@ document.getElementById("stopButton").addEventListener("click", function () {
 });
 
 
+document.getElementById("donateLink").addEventListener("click", function() {
+  window.open(document.getElementById("donateLink").getAttribute("href"), '_blank').focus();
+})
+
