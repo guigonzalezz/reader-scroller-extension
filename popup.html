@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-    scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    
+    
   </head>
 <body>
-  <button id="myButton"> TEST </button>
+  <header class="mainTitle">
+    <h1>Reader Scroller</h1>
+  </header>
+  
+  <main>
+    <div class="speedBox">
+      <label name="rangeInput">Velocidade</label>
+      <input type="range" id="rangeInput" name="rangeInput" step="1" min="1" max="5">
+    </div>
 
+    <div class="buttonBox">
+      <button id="startButton"> Start </button>
+      <button id="stopButton"> Stop </button>
+    </div>
+
+    <div class="tipsBox">
+      <p>Tips</p>
+    </div>
+  </main>
+
+  
+
+  <footer>
+    <h3>Ads</h3>
+  </footer>
   <script type="text/javascript" src="./script.js" ></script>
 </body>
 </html>
