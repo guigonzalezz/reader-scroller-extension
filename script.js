@@ -3,7 +3,7 @@ var stopAnimation = false;
 
 function startScroll(defaultSpeed = 30) {
   var pos = document.body.scrollHeight;
-  var time = window.scrollY * defaultSpeed;
+  var time = 25000 * defaultSpeed;
   stopAnimation = false;
   var currentPos = window.pageYOffset;
   var start = null;
