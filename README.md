@@ -2,7 +2,7 @@
   <img  src="./screenshots/logo.png" alt="Logo Reader Scroller">
 </h1>
 <h3 align="center"> 
-Extension for scrolling down a page using for reading or seeing a tab on browser 
+Extension for scrolling down a page using for reading or seeing a tab on the browser
 </h3>
 
 
