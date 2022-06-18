@@ -1,17 +1,9 @@
-// let defaultPos = document.body.scrollHeight;
-// let defaultTime = 1000000;
-// defaultTime = window.scrollY * 30;
-
-
-
 var animationFrameId = [];
 var stopAnimation = false;
-var lastSpeedSelected = null
 
-function startScroll(defaultSpeed = 1) {
-  lastSpeedSelected = choosedSpeed(defaultSpeed)
+function startScroll() {
   var pos = document.body.scrollHeight;
-  var time = window.scrollY * lastSpeedSelected;
+  var time = window.scrollY * 5;
   stopAnimation = false;
   var currentPos = window.pageYOffset;
   var start = null;
@@ -39,38 +31,10 @@ function stopScroll() {
   animationFrameId = [];
 }
 
-function choosedSpeed(speed) {
-  var returnedSpeed = 30;
-  switch(speed) {
-    case 1:
-      returnedSpeed = 30//More Slower
-      break;
-    case 2:
-      returnedSpeed = 20;//Slower
-      break;
-    case 3:
-      returnedSpeed = 10;//Slow
-      break;
-    case 4:
-      returnedSpeed = 5;//Normal
-      break;
-    case 5:
-      returnedSpeed = 2.5;//Fast
-      break;
-  }
-  return returnedSpeed;
-}
-
-function updateSpeed(speed) {
-  lastSpeedSelected = choosedSpeed(speed);
-}
-
-// Start and Stop clicking on space bar
-// Add this on future versions
 document.addEventListener('keyup', e => {
   if (e.key == " " || e.code == "Space") {
     if(animationFrameId.length == 0) {
-      startScroll(!lastSpeedSelected ? 1 : lastSpeedSelected)
+      startScroll()
     }
     else {
       stopScroll()

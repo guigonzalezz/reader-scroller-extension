@@ -2,17 +2,23 @@
   "name": "Reader Scroller",
   "description": "Extension for scrolling down a page using for reading or seeing a tab on browser",
   "version": "1.0.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "minimum_chrome_version": "46",
+
   
-  "permissions": ["activeTab","tabs", "<all_urls>"],
+  "permissions": ["scripting", "<all_urls>"],
+  "host_permissions": ["scripting", "<all_urls>"],
  
   "content_scripts" : [{
     "matches": ["<all_urls>"],
     "js": ["script.js"]
   }],
+  "web_accessible_resources": [{
+    "resources": ["script.js", "scroller.js"],
+    "matches": ["<all_urls>"]
+  }],
 
-  "browser_action": {
+  "action": {
     "default_title": "Reader Scroller",
     "default_popup": "popup.html",  
     "default_icon": {
