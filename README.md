@@ -1,8 +1,8 @@
-# Reader Tools - Chrome Extension
+# Reader Scroller - Chrome Extension
 
 A modern Chrome extension for auto-scrolling web pages, perfect for reading articles, manga, webcomics, and more.
 
-![Reader Tools Screenshot](screenshots/reader-tools-preview.png)
+![Reader Scroller Screenshot](screenshots/reader-scroller-preview.png)
 
 ## Features
 
@@ -10,14 +10,14 @@ A modern Chrome extension for auto-scrolling web pages, perfect for reading arti
   - **Continuous**: Smooth, continuous scrolling with adjustable speed (1x-10x)
   - **Interval**: Scroll by page at customizable intervals (1-30 seconds)
 
-- ⚡ **Keyboard Shortcuts:**
-  - `Space` - Start/Stop scrolling
-  - `J` / `K` - Decrease/Increase speed
-  - `F` - Toggle fullscreen
-
-- 📖 **Auto-Next Chapter**: Automatically detects and clicks "next chapter" links when reaching the bottom of a page
+- ⚡ **Keyboard Shortcut:**
+  - `Space` - Start/Stop scrolling (works in popup and on page)
 
 - 🎨 **Modern Dark UI**: Clean, minimal interface built with React and Tailwind CSS
+
+- 👁️ **Auto-fade**: Panel becomes transparent after 5 seconds of inactivity
+
+- ☕ **Support**: Buy me a coffee button with QR code on hover
 
 ## Tech Stack
 
@@ -30,13 +30,17 @@ A modern Chrome extension for auto-scrolling web pages, perfect for reading arti
 
 ## Installation
 
+### From Chrome Web Store
+
+[Add to Chrome](https://chromewebstore.google.com/detail/reader-scroller/gifalhdflpgdnekdfninhpkkdnaoclim)
+
 ### From Source (Development)
 
 1. Clone this repository:
 
    ```bash
-   git clone https://github.com/guigonzalezz/reader-tools-extension.git
-   cd reader-tools-extension
+   git clone https://github.com/guigonzalezz/reader-scroller-extension.git
+   cd reader-scroller-extension
    ```
 
 2. Install dependencies:
@@ -59,7 +63,7 @@ A modern Chrome extension for auto-scrolling web pages, perfect for reading arti
 
 ### Development Mode
 
-For development with hot reload:
+For development with watch mode:
 
 ```bash
 npm run build:watch
@@ -72,7 +76,7 @@ This will watch for changes and rebuild automatically. You'll need to reload the
 ```
 ├── src/
 │   ├── components/         # React components
-│   │   ├── ui/            # UI primitives (Button, Switch, Select, etc.)
+│   │   ├── ui/            # UI primitives (Button, Select, Kbd)
 │   │   └── ReaderToolsPopup.tsx  # Main popup component
 │   ├── content/           # Content scripts
 │   │   └── content-script.ts    # Scrolling logic injected into pages
@@ -87,8 +91,8 @@ This will watch for changes and rebuild automatically. You'll need to reload the
 │   ├── types/             # TypeScript types
 │   │   └── index.ts
 │   └── manifest.json      # Chrome extension manifest
-├── images/                # Extension icons
-├── dist/                  # Built extension (generated)
+├── images/                # Extension icons and assets
+├── dist/                  # Built extension (generated, git ignored)
 ├── package.json
 ├── tailwind.config.js
 ├── tsconfig.json
@@ -116,6 +120,16 @@ This will watch for changes and rebuild automatically. You'll need to reload the
 
 Scrolls approximately 90% of the viewport height at each interval (1-30 seconds).
 
+## Usage
+
+1. Click the Reader Scroller icon in Chrome toolbar
+2. Select your preferred mode (Continuous or Interval)
+3. Adjust speed/interval using the +/- buttons
+4. Click "Start" or press `Space` to begin auto-scrolling
+5. Click "Stop" or press `Space` again to pause
+
+**Note:** When you change the speed or interval while scrolling, the scroll will stop automatically. Click "Start" again to continue with the new settings.
+
 ## Contributing
 
 1. Fork the repository
@@ -123,6 +137,12 @@ Scrolls approximately 90% of the viewport height at each interval (1-30 seconds)
 3. Commit your changes (`git commit -m 'Add some amazing feature'`)
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
+
+## Support
+
+If you find this extension useful, consider:
+- ⭐ Giving it a star on GitHub
+- ☕ [Buying me a coffee](https://buymeacoffee.com/guigonzalezz)
 
 ## License
 
@@ -133,7 +153,3 @@ MIT License - feel free to use this project however you'd like.
 **Guilherme Gonzalez**
 
 - GitHub: [@guigonzalezz](https://github.com/guigonzalezz)
-
----
-
-If you find this extension useful, consider giving it a ⭐ on GitHub!
