@@ -141,6 +141,7 @@ Scrolls approximately 90% of the viewport height at each interval (1-30 seconds)
 ## Support
 
 If you find this extension useful, consider:
+
 - ⭐ Giving it a star on GitHub
 - ☕ [Buying me a coffee](https://buymeacoffee.com/guigonzalezz)
 
